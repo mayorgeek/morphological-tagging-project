@@ -3,35 +3,38 @@ import {Head} from "@inertiajs/vue3";
 import {ref} from "vue";
 
 const vowel = ref('');
+const vowels = ['a', 'e', 'e', 'i', 'o', 'o', 'u'];
+
 const verbs = [
-    'ba', 'be', 'bo', 'da', 'de', 'ga', 'go', 'gbe', 'ja', 'jo', 'ke', 'le', 'mi', 'mo',
-    'nu', 'pa', 'p', 'ra', 'so', 'sa', 'ta', 'wo', 'ya', 'ye', 'yo'
+    'bà', 'bë', 'bò', 'bo', 'bó', 'bö', 'dá', 'dé', 'ga', 'gò', 'go', 'gbë', 'gbo', 'jà', 'já', 'jö', 'ké', 'lè', 'lé', 'mì', 'mò',
+    'nú', 'pá', 'p', 'ra', 'so', 'sà', 'ta', 'wo', 'wò', 'ya', 'yé', 'yò'
 ];
-const vowels = ['a','e','i','o','u'];
 
 const meanings = [
-    'Village', 'Blade', 'Secure', 'Cutlass', 'Crown', 'Chair', 'Clock', 'Farmer', 'Dog', 'Contribution', 'Axe', 'Concubine', 'Sign', 'Clay', 'Mercy', 'Arm', 'Pocket',
-    'Body', 'Cloth', 'Culture', 'Pepper', 'Plate', 'Wife', 'World', 'Joy'
+    'Village', 'Blade', 'Secure', 'Female', 'Half', 'Plate', 'Cutlass', 'Crown', 'Chair', 'Cage', 'Clock', 'Farmer', 'Concoction', 'Roof',
+    'Dog', 'Contribution', 'Axe', 'Concubine', 'Night', 'Sign', 'Clay', 'Mercy', 'Arm', 'Pocket', 'Body', 'Cloth', 'Culture', 'Pepper', 'Plate',
+    'Skin', 'Wife', 'World', 'Joy'
 ];
 const verbMeanings = [
-    {word: "ba", meaning: "bend"},
-    {word: "be", meaning: "peel"},
+    {word: "bà", meaning: "bend"},
+    {word: "bë", meaning: "peel"},
+    {word: "bò", meaning: "cover"},
     {word: "bo", meaning: "cover"},
-    {word: "da", meaning: "created"},
-    {word: "de", meaning: "arrived"},
+    {word: "bó", meaning: "cover"},
+    {word: "dá", meaning: "created"},
+    {word: "dé", meaning: "cover"},
     {word: "go", meaning: "lay in wait"},
-    {word: "gbe", meaning: "bend"},
-    {word: "gba", meaning: "agreed"},
+    {word: "gbà", meaning: "agreed"},
     {word: "gbo", meaning: "crush leaves in water"},
-    {word: "ja", meaning: "fight"},
+    {word: "jà", meaning: "fight"},
+    {word: "já", meaning: "fight"},
     {word: "jo", meaning: "resemble"},
-    {word: "mi", meaning: "shake"},
-    {word: "mo", meaning: "mold"},
-    {word: "pa", meaning: "kill"},
+    {word: "mì", meaning: "shake"},
+    {word: "mò", meaning: "mold"},
+    {word: "pá", meaning: "kill"},
     {word: "ra", meaning: "buy"},
     {word: "sa", meaning: "select"},
     {word: "wo", meaning: "see"},
-    {word: "le", meaning: "bend"},
     {word: "ya", meaning: "tear"},
     {word: "ye", meaning: "understand"},
 ];
@@ -80,7 +83,7 @@ const concatWord = () => {
             </div>
 
             <div class="mt-8" v-if="vowel && !verbHasMeaning">
-                <p>Monosyllabic verb "<span class="font-bold">{{verbWithoutMeaning}}</span>" does not have a meaning</p>
+                <p>Monosyllabic lexical item "<span class="font-bold">{{verbWithoutMeaning}}</span>" does not have a meaning</p>
             </div>
             <div class="mt-8" v-if="vowel && verbHasMeaning">
                 <p>"<span class="font-bold">{{verbWithMeaning}}</span>" means {{verbMeaning}}</p>
